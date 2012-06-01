@@ -1,5 +1,5 @@
-#Session-DebugBar (cc)#
-Pavel Železný (2bfree), 2012 ([www.pavelzelezny.cz](http://www.pavelzelezny.cz))
+#Session-DebugBar ([WTFPL](http://en.wikipedia.org/wiki/WTFPL))#
+Pavel Å½eleznÃ½ (2bfree), 2012 ([www.pavelzelezny.cz](http://www.pavelzelezny.cz))
 
 ## Requirements ##
 
@@ -35,7 +35,8 @@ common:
 			class: SessionPanel
 			setup:
 				- hideSection('Nette.Http.UserStorage/')
+				- hideSection('Nette.Forms.Form/CSRF')
 			arguments:
 				- @application
 				- @session
-``` 
+```
