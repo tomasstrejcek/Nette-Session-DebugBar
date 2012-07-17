@@ -9,10 +9,10 @@
 
 {block #content}
 	{stylesheet $basePath.'/templates/style.css'}
-	<h1>
-		<img n:src="{$basePath}/templates/logo.png"  style="vertical-align: middle; position: relative; top: -2px; left: -2px;"/>
-		 Session Panel
-	 </h1>
+	<h1 id="nette-debug-session-panel-title">
+		<img n:src="{$basePath}/templates/logo.png" width="16" height="16" />
+		Session Panel
+	</h1>
 	<div id="nette-debug-session-panel">
 		<table n:foreach="$session->getIterator() as $section" n:if="in_array($section,$hiddenSections) === FALSE">
 			<thead>
