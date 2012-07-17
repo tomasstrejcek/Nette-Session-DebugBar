@@ -6,6 +6,7 @@
  * @param string $basePath Path to directory where compnent is situated
  * @param \Nette\Http\Session $session
  * @param array $sessionMetaStore contain NetteFramework metadata about sessions
+ * @param array $sessionMaxTime maximal session lifetime in seconds
  *}
 
 {block #content}
@@ -13,6 +14,9 @@
 	<h1 id="nette-debug-session-panel-title">
 		<img n:src="{$basePath}/templates/logo.png" width="16" height="16" />
 		Session Panel
+		<span class="pull-right expiration">
+			<strong>Max liftime:</strong> {$sessionMaxTime} s
+		</span>
 	</h1>
 	<div id="nette-debug-session-panel">
 		<table n:foreach="$session->getIterator() as $section" n:if="in_array($section,$hiddenSections) === FALSE">

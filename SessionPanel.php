@@ -69,6 +69,7 @@ class SessionPanel extends \Nette\Application\UI\Control implements \Nette\Diagn
 		$template = $this->getFileTemplate(__DIR__ . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . 'panel.latte');
 		$template->session = $this->session;
 		$template->sessionMetaStore = $_SESSION['__NF']['META'];
+		$template->sessionMaxTime = ini_get('session.gc_maxlifetime');
 		$template->hiddenSections = $this->hiddenSections;
 		return $template;
 	}

@@ -57,16 +57,25 @@
 }
 
 #nette-debug-session-panel strong{
-	font-weight: bold;
+	font-weight: bold !important;
 }
 
-#nette-debug-session-panel .pull-right{
+#nette-debug-session-panel-title .pull-right,
+#nette-debug-session-panel .pull-right {
 	float: right !important;
 }
 
-#nette-debug-session-panel .expiration{
+#nette-debug-session-panel-title .expiration,
+#nette-debug-session-panel .expiration {
 	font-weight: normal !important;
 	font-size: 80%;
+}
+
+#nette-debug-session-panel-title .expiration {
+	margin-right: 5px;
+	font-size: 70%;
+	line-height: 200%;
+	vertical-align: middle;
 }
 
 #nette-debug-session-panel [title]{
