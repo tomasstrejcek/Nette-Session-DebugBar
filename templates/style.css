@@ -24,6 +24,8 @@
 #nette-debug-session-panel thead td {
 	font-weight: bolder;
 	font-size: 14px;
+	line-height: 18px;
+	vertical-align: middle;
 }
 
 #nette-debug-session-panel pre {
@@ -52,4 +54,21 @@
 #nette-debug-session-panel h2{
 	font-size: 24px !important;
 	line-height: 36px !important;
+}
+
+#nette-debug-session-panel strong{
+	font-weight: bold;
+}
+
+#nette-debug-session-panel .pull-right{
+	float: right !important;
+}
+
+#nette-debug-session-panel .expiration{
+	font-weight: normal !important;
+	font-size: 80%;
+}
+
+#nette-debug-session-panel [title]{
+	cursor: help;
 }

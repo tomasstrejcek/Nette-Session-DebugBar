@@ -68,6 +68,7 @@ class SessionPanel extends \Nette\Application\UI\Control implements \Nette\Diagn
 	{
 		$template = $this->getFileTemplate(__DIR__ . DIRECTORY_SEPARATOR . 'templates' . DIRECTORY_SEPARATOR . 'panel.latte');
 		$template->session = $this->session;
+		$template->sessionMetaStore = $_SESSION['__NF']['META'];
 		$template->hiddenSections = $this->hiddenSections;
 		return $template;
 	}
@@ -85,7 +86,7 @@ class SessionPanel extends \Nette\Application\UI\Control implements \Nette\Diagn
 		{
 			$template = new \Nette\Templating\FileTemplate($templateFilePath);
 			$template->onPrepareFilters[] = callback($this, 'templatePrepareFilters');
-			$template->registerHelperLoader('Nette\Templating\Helpers::loader');
+			$template->registerHelperLoader('\Nette\Templating\Helpers::loader');
 			$template->basePath = realpath(__DIR__);
 			return $template;
 		}
