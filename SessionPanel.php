@@ -1,6 +1,4 @@
-
 <?php
-
 /**
  * Session Nette Debug Panel
  * @author Pavel Železný <info@pavelzelezny.cz>
