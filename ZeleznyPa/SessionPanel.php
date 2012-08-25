@@ -101,7 +101,9 @@ class SessionPanel extends Nette\Object implements Nette\Diagnostics\IBarPanel
 	public function getTab()
 	{
 		return self::render(__DIR__ . '/templates/tab.phtml', array(
-			'src' => callback(get_called_class() . '::src'),
+			'src' => function ($file) {
+				return Nette\Templating\Helpers::dataStream(file_get_contents($file));
+			},
 			'esc' => callback('Nette\Templating\Helpers::escapeHtml')
 		));
 	}
@@ -116,13 +118,9 @@ class SessionPanel extends Nette\Object implements Nette\Diagnostics\IBarPanel
 	{
 		$url = $this->url;
 		return self::render(__DIR__ . '/templates/panel.phtml', array(
-			'src' => callback(get_called_class() . '::src'),
 			'time' => callback(get_called_class() . '::time'),
 			'esc' => callback('Nette\Templating\Helpers::escapeHtml'),
 			'click' => callback('Nette\Diagnostics\Helpers::clickableDump'),
-			'css' => function ($file) {
-				return Nette\Utils\Html::el('style')->setHtml("\n" . file_get_contents($file) . "\n");
-			},
 			'del' => function ($section = NULL) use ($url) {
 				$url = clone $url;
 				$url->appendQuery(array(
@@ -180,17 +178,6 @@ class SessionPanel extends Nette\Object implements Nette\Diagnostics\IBarPanel
 		ob_start();
 		Nette\Utils\LimitedScope::load(str_replace('/', DIRECTORY_SEPARATOR, $file), $vars);
 		return ob_get_clean();
-	}
-
-
-
-	/**
-	 * @param string $file
-	 * @return string
-	 */
-	public static function src($file)
-	{
-		return Nette\Templating\Helpers::dataStream(file_get_contents($file));
 	}
 
 
