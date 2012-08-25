@@ -17,7 +17,6 @@ use Nette\Iterators\Filter;
  */
 class SessionPanel extends Nette\Object implements Nette\Diagnostics\IBarPanel
 {
-
 	const SIGNAL = 'nette-session-panel-delete-session';
 
 	/**
@@ -146,8 +145,6 @@ class SessionPanel extends Nette\Object implements Nette\Diagnostics\IBarPanel
 			return !in_array($sectionName, $hidden);
 		});
 		return new Mapper($sections, function ($sectionName) {
-			/** @var \Nette\Http\Session $session */
-			$meta = isset($_SESSION['__NF']['META'][$sectionName]) ? $_SESSION['__NF']['META'][$sectionName] : array();
 			$data = $_SESSION['__NF']['DATA'][$sectionName];
 
 			$section = (object)array(
@@ -155,6 +152,9 @@ class SessionPanel extends Nette\Object implements Nette\Diagnostics\IBarPanel
 				'data' => $data,
 				'expiration' => 'inherited'
 			);
+
+			$meta = isset($_SESSION['__NF']['META'][$sectionName])
+				? $_SESSION['__NF']['META'][$sectionName] : array();
 
 			if (isset($meta['']['T'])) {
 				$section->expiration = self::time($meta['']['T'] - time());
@@ -197,6 +197,5 @@ class SessionPanel extends Nette\Object implements Nette\Diagnostics\IBarPanel
 		if (($difference = round($difference)) != 1) $periods[$j] .= "s";
 		return "$difference {$periods[$j]}";
 	}
-
 
 }
