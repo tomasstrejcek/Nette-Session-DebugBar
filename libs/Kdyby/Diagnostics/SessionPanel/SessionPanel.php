@@ -1,6 +1,6 @@
 <?php
 
-namespace ZeleznyPa;
+namespace Kdyby\Diagnostics\SessionPanel;
 
 use Nette;
 use Nette\Http\Request;
@@ -154,7 +154,8 @@ class SessionPanel extends Nette\Object implements Nette\Diagnostics\IBarPanel
 			);
 
 			$meta = isset($_SESSION['__NF']['META'][$sectionName])
-				? $_SESSION['__NF']['META'][$sectionName] : array();
+				? $_SESSION['__NF']['META'][$sectionName]
+				: array();
 
 			if (isset($meta['']['T'])) {
 				$section->expiration = self::time($meta['']['T'] - time());

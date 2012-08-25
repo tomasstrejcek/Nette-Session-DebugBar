@@ -1,17 +1,16 @@
 {
-    "name":"zeleznypa/nette-session-panel",
+    "name":"kdyby/nette-session-panel",
     "description":"Nette DebugBar panel, that allows you inspect your sessions.",
     "keywords":["nette", "session", "panel"],
-    "homepage":"http://addons.nette.org/cs/sessionpanel",
-    "license":["WTFPL"],
+    "license":["BSD-3", "GPLv2", "GPLv3"],
     "authors":[
-        {
-            "name":"Pavel Železný",
-            "homepage":"http://pavelzelezny.cz/"
-        },
         {
             "name":"Filip Procházka",
             "homepage":"http://filip-prochazka.com/"
+        },
+        {
+            "name":"Pavel Železný",
+            "homepage":"http://pavelzelezny.cz/"
         }
     ],
     "require":{
@@ -20,7 +19,7 @@
     },
     "autoload":{
         "psr-0":{
-            "ZeleznyPa":""
+            "Kdyby":"libs/"
         }
     }
 }
