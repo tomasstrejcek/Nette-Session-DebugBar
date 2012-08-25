@@ -1,0 +1,26 @@
+{
+    "name":"zeleznypa/nette-session-panel",
+    "description":"Nette DebugBar panel, that allows you inspect your sessions.",
+    "keywords":["nette", "session", "panel"],
+    "homepage":"http://addons.nette.org/cs/sessionpanel",
+    "license":["WTFPL"],
+    "authors":[
+        {
+            "name":"Pavel Železný",
+            "homepage":"http://pavelzelezny.cz/"
+        },
+        {
+            "name":"Filip Procházka",
+            "homepage":"http://filip-prochazka.com/"
+        }
+    ],
+    "require":{
+        "php":">=5.3.2",
+        "nette/nette":"*"
+    },
+    "autoload":{
+        "psr-0":{
+            "ZeleznyPa":""
+        }
+    }
+}

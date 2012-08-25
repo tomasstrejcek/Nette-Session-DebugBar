@@ -3,7 +3,7 @@ Pavel Železný (2bfree), 2012 ([www.pavelzelezny.cz](http://www.pavelzelezny.cz
 
 ## Requirements ##
 
-[Nette Framework 2.0.3](http://nette.org) or higher. (PHP 5.3 edition)
+[Nette Framework 2.0.3](http://nette.org) or higher and PHP 5.3 or higher.
 
 ## Documentation ##
 Simple DebugBar to show content of session.
@@ -14,10 +14,7 @@ To load SessionPanel into the DebugBar by insert following code into config.neon
 common:
 	services:
 		sessionPanel:
-			class: SessionPanel
-			arguments:
-				- @application
-				- @session
+			class: ZeleznyPa\SessionPanel
 
 	nette:
 		debugger:
@@ -32,11 +29,8 @@ You can also specify section to hide in debugbar by add setup section in service
 common:
 	services:
 		sessionPanel:
-			class: SessionPanel
+			class: ZeleznyPa\SessionPanel
 			setup:
 				- hideSection('Nette.Http.UserStorage/')
 				- hideSection('Nette.Forms.Form/CSRF')
-			arguments:
-				- @application
-				- @session
 ```
