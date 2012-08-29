@@ -158,7 +158,7 @@ class SessionPanel extends Nette\Object implements Nette\Diagnostics\IBarPanel
 				: array();
 
 			if (isset($meta['']['T'])) {
-				$section->expiration = self::time($meta['']['T'] - time());
+				$section->expiration = SessionPanel::time($meta['']['T'] - time());
 			} elseif (isset($meta['']['B']) && $meta['']['B'] === TRUE) {
 				$section->expiration = 'Browser';
 			}
