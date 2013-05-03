@@ -1,6 +1,6 @@
 {
-    "name":"kdyby/nette-session-panel",
-    "description":"Nette DebugBar panel, that allows you inspect your sessions.",
+    "name":"tomasstrejcek/nette-session-panel",
+    "description":"Nette DebugBar panel (port of kdyby/nette-session-panel for nette 2.0.x), that allows you inspect your sessions.",
     "keywords":["nette", "session", "panel"],
     "license":["BSD-3", "GPLv2", "GPLv3"],
     "homepage":"http://kdyby.org",
