@@ -120,7 +120,7 @@ class SessionPanel extends Nette\Object implements Nette\Diagnostics\IBarPanel
 			'time' => callback(get_called_class() . '::time'),
 			'esc' => callback('Nette\Templating\Helpers::escapeHtml'),
 			'click' => callback(function ($variable) {
-				return Nette\Diagnostics\Dumper::toHtml($variable, array(Nette\Diagnostics\Dumper::COLLAPSE => TRUE));
+				return Nette\Diagnostics\Debugger::dump($variable);
 			}),
 			'del' => function ($section = NULL) use ($url) {
 				$url = clone $url;
