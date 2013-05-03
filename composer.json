@@ -12,7 +12,10 @@
         {
             "name":"Pavel Železný",
             "homepage":"http://pavelzelezny.cz/"
-        }
+        }, {
+	    "name":"Tomáš Strejček",
+	    "homepage":"http://tomas-strejcek.cz"
+	}
     ],
     "support":{
         "email":"hosiplan@kdyby.org",

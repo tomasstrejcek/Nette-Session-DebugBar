@@ -2,7 +2,7 @@
 
 ## Requirements ##
 
-[Nette Framework 2.1](http://nette.org) or higher and PHP 5.3 or higher.
+[Nette Framework 2.0.x](http://nette.org) or higher and PHP 5.3 or higher.
 
 ## Documentation ##
 Simple DebugBar to show contents of session.
